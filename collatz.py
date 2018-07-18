@@ -15,4 +15,7 @@ def collatz(number):
     else:
         print 'Collatz sequence complete!'
 
-collatz(input('What\'s your starting number? '))
+try:
+    collatz(int(input('What\'s your starting number? ')))
+except NameError:
+    print 'Invalid input, integer values only.'
