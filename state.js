@@ -57,5 +57,8 @@ AFRAME.registerState({
     menuJerusalem: function (state) {
       state.menu = 'jerusalem';
     },
+    menuBirzeit: function (state) {
+      state.menu = 'birzeit';
+    }
   }
 })

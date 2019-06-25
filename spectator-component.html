@@ -1,0 +1,56 @@
+<head>
+  <title>My A-Frame Scene</title>
+  <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script> 
+  <script src="https://unpkg.com/aframe-observer-component/dist/aframe-observer-component.min.js"></script> 
+  <!--<script>
+    AFRAME.registerComponent('spectator', {
+          init: function () {
+    // var _this6 = this;
+      var el = this.el;
+      var observer = document.querySelector('#observerCamera');
+      var mainCam = document.querySelector('#mainCamera');
+      
+    window.addEventListener('keydown', function (evt) {
+      // Alt + Ctrl + O: Shorcut to toggle the spectator camera
+      var shortcutPressed = evt.keyCode === 79 && evt.ctrlKey && evt.altKey;
+      if (shortcutPressed) {
+       //  _this6.toggle();
+        observer.setAttribute('active', true);
+        mainCam.setAttribute('active', false);
+      }
+    });
+    }
+    })
+  </script>-->
+</head>
+ 
+<body>
+  <a-scene embedded>
+    <a-sky color="#ECECEC"></a-sky>
+    <a-box 
+      position="-1 0.5 1" 
+      rotation="0 45 0" 
+      width="1" height="1" depth="1"  
+      color="#4CC3D9"></a-box>
+    <a-plane 
+      rotation="-90 0 0" 
+      width="4" height="4" 
+      color="#7BC8A4"></a-plane>
+ 
+    <a-entity
+      id="mainCamera"
+      position="0 0 3.8"
+      camera
+      active="false"
+      look-controls></a-entity>
+ 
+    <a-entity
+      id="observerCamera"
+      position="2 1.8 4.8"
+      rotation="-20 45 0"
+      camera
+      observer="canvas: #cameraObserver;"
+      active="true"></a-entity>
+  </a-scene>
+  <div id="cameraObserver"></div>
+</body>
